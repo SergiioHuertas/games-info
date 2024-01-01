@@ -33,7 +33,7 @@ export default async function GamesContainer({searchParams}) {
             <div className="grid grid-cols-3 gap-4">
                 {result?.results?.map((game) => {
                     return game.background_image && (
-                        <Link key={game.id} href={`/games/${game.id}`}>
+                        <Link key={game.id} href={`/games?id=${game.id}`}>
                             <Card className='hover:bg-amber-400 cursor-pointer h-full'>
                                 <CardHeader>
                                     <CardTitle className='justify-center flex whitespace-break-spaces align-middle'>{game.name}</CardTitle>

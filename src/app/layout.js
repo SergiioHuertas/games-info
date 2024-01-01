@@ -1,5 +1,6 @@
 import { Inter } from 'next/font/google'
 import './globals.css'
+import Link from "next/link";
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -11,7 +12,32 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <body className={inter.className}>
+    <header className="flex justify-between items-center p-6 bg-gray-800 text-white">
+      <Link href={'/'} className="text-3xl font-bold">Games info</Link>
+      <nav>
+        <ul className="flex space-x-4">
+          <li>
+            <Link className="hover:underline" href="/">
+              Home
+            </Link>
+          </li>
+          <li>
+            <Link className="hover:underline" href="#">
+              About
+            </Link>
+          </li>
+          <li>
+            <Link className="hover:underline" href="#">
+              Contact
+            </Link>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    {children}
+    <footer className="p-6 bg-gray-800 text-center text-white mt-12">© 2023 Game News. All rights reserved.</footer>
+    </body>
     </html>
   )
 }
